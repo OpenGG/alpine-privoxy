@@ -1,0 +1,14 @@
+version: '2'
+services:
+  privoxy:
+    user: '1024:100'
+    container_name: privoxy
+    image: opengg/privoxy
+    restart: always
+    network_mode: "host"
+    environment:
+      - PORT=21081
+      - SOCKS5IP=127.0.0.1
+      - SOCKS5PORT=21080
+    ports:
+      - 21081:21081
